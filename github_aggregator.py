@@ -11,7 +11,7 @@ def gather_repos(github_id):
     repositories found in Github for that user ID. """
     repos_list = []
 
-    url = 'https://api.github.com/users/' + 'kylerozanitis' + '/repos'
+    url = 'https://api.github.com/users/' + github_id + '/repos'
     response = requests.get(url)
     
     repos = json.loads(response.text)
@@ -24,4 +24,4 @@ def gather_repos(github_id):
         else:
             repos_list.append(repo['id'])
 
-    print(repos_list)
+    return repos_list
