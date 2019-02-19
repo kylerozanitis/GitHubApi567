@@ -41,4 +41,18 @@ def gather_commits(github_id, repo_name):
     for commit in commits:
         commit_count += 1
 
-    return github_id, commit_count
+    return repo_name, commit_count
+
+def gather_github_info(github_id):
+    """ This function takes as input the username & returns a list of tuples
+    of repo_name & commit_count for that GitHub user. """
+
+    results_list = []
+
+    repos_list = gather_repos(github_id)
+
+    for repo in repos_list:
+        repo_name, commit_count = gather_commits(github_id, repo)
+        results_list.append((repo_name, commit_count))
+
+    return results_list
