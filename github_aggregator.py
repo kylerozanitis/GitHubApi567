@@ -9,6 +9,7 @@ import json
 def gather_repos(github_id):
     """ This function takes a username as input and returns a list of
     repositories found in Github for that user ID. """
+    
     repos_list = []
 
     url = 'https://api.github.com/users/' + github_id + '/repos'
@@ -25,3 +26,19 @@ def gather_repos(github_id):
             repos_list.append(repo['id'])
 
     return repos_list
+
+def gather_commits(github_id, repo_name):
+    """ This function takes a username & repo name as input and returns
+    a tuple with the repo and number of commits. """
+
+    url = 'https://api.github.com/repos/' + github_id + '/' + repo_name + '/commits'
+    reponse = requests.get(url)
+
+    commits = json.loads(reponse.text)
+
+    commit_count = 0
+
+    for commit in commits:
+        commit_count += 1
+
+    return github_id, commit_count
