@@ -18,4 +18,5 @@ class TestGitHubAggregator(unittest.TestCase):
         self.assertEqual(gather_repos('Asupkay'), ['agar.io-clone', 'asupkay.github.io', 'Chirp', 'Code-Jam-Parody', 'Cryptocurrency-Tracker-Vector', 'CryptoPortfolio', 'CS-546-Final-Project', 'CS-546-Web-Programming-I', 'CS-554-Web-Programming-II', 'DiceRoll', 'enlistment', 'friendly-js-primer', 'GameJam7', 'GCP-App-Engine-Node-Tutorial', 'Github-Monitor', 'GitHubApi567', 'Google-Chrome-Extensions', 'Homeless-Shelter-Finder', 'Interview-Practice', 'Interview-Prep', 'NodeJSPractice', 'Raffler', 'React-Redux-Demo', 'Smart-Home', 'SSW-567', 'SSW-567-HW-02a', 'Stock-Tracker', 'ToDone-App', 'ud851-Exercises', 'ud851-Sunshine'])
 
 if __name__ == '__main__':
+    print("Running Unit Tests...")
     unittest.main(exit=False,verbosity=2)
